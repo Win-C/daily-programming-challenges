@@ -47,8 +47,8 @@ class BinaryTree {
     }
 
     // Recurse sum of values for left and right subtree
-    return (this.getPathVal(curr.left, val) + 
-            this.getPathVal(curr.right, val));
+    return (this.getTreePathSums(curr.left, val) + 
+            this.getTreePathSums(curr.right, val));
   }
 }
 
