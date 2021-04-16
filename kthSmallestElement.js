@@ -12,18 +12,15 @@
 // Using Quick Sort, pick a pivot element, then move the pivot
 // element to its correct position and partition the array around
 // it. The goal is not to do complete quicksort, but stop at the 
-// point where pivot itself is k'th smallest element. Also, not to
-// recur for both left and right sides of pivot, but recur for one
-// of them according to the position of pivot.
+// point where pivot itself is k'th smallest element. Also, does not
+// recurse for both left and right sides of pivot, but recurses for 
+// one side only, according to the position of pivot.
 
 /** Function finds the kth smallest element in an unsorted array
  *  Time complexity: O(N) on average
  */
 function findKthSmallestElement(nums, k, left = 0, right = nums.length - 1) {
   let pivot = partition(nums, left, right);
-  console.log("nums = ", nums);
-  console.log("left = ", left);
-  console.log("right = ", right);
 
   if (pivot === k) return nums[pivot];
 
