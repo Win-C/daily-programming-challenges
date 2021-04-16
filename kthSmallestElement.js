@@ -20,31 +20,34 @@
  *  Time complexity: O(N) on average
  */
 function findKthSmallestElement(nums, k, left = 0, right = nums.length - 1) {
-  // Helper function responsible for arranging elements in an array
-  // on left and right side of pivot 
-  // Returns the pivot index
-  function partition(nums, start, end) {
-    let pivot = nums[end];
-    let i = start;
-    for (let j = start; j < end; j++) {
-      if (nums[j] <= pivot) {
-        [nums[i], nums[j]] = [nums[j], nums[i]];
-        i++;
-      }
-    }
-    [nums[i], nums[end]] = [nums[end], nums[i]];
-
-    return i;
-  }
-
-  // Get pivot index
   let pivot = partition(nums, left, right);
+  console.log("nums = ", nums);
+  console.log("left = ", left);
+  console.log("right = ", right);
 
   if (pivot === k) return nums[pivot];
 
   return (pivot > k)
     ? findKthSmallestElement(nums, k, left, pivot - 1)
     : findKthSmallestElement(nums, k, pivot + 1, right);
+}
+
+/** Helper function responsible for arranging elements in an array 
+ *  on either side of the pivot 
+ *  Returns the pivot index 
+ */
+function partition(arr, start, end) {
+  let pivot = arr[end];
+  let i = start;
+  for (let j = start; j < end; j++) {
+    if (arr[j] <= pivot) {
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+      i++;
+    }
+  }
+  [arr[i], arr[end]] = [arr[end], arr[i]];
+
+  return i;
 }
 
 // Test Cases
