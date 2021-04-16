@@ -23,16 +23,16 @@ function findKthSmallestElement(nums, k, left = 0, right = nums.length - 1) {
   // Helper function responsible for arranging elements in an array
   // on left and right side of pivot 
   // Returns the pivot index
-  function partition(arr, start, end) {
-    let pivot = arr[end];
+  function partition(nums, start, end) {
+    let pivot = nums[end];
     let i = start;
     for (let j = start; j < end; j++) {
-      if (arr[j] <= pivot) {
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+      if (nums[j] <= pivot) {
+        [nums[i], nums[j]] = [nums[j], nums[i]];
         i++;
       }
     }
-    [arr[i], arr[end]] = [arr[end], arr[i]];
+    [nums[i], nums[end]] = [nums[end], nums[i]];
 
     return i;
   }
@@ -50,6 +50,6 @@ function findKthSmallestElement(nums, k, left = 0, right = nums.length - 1) {
 // Test Cases
 let nums1 = [5, 3, 8, 2, 0];
 let nums2 = [7, 10, 4, 3, 20, 15];
-let k1 = 2;
-let k2 = 3;
-let k3 = 4;
+
+console.assert(findKthSmallestElement(nums1, 2) === 3);
+console.assert(findKthSmallestElement(nums2, 3) === 10);
