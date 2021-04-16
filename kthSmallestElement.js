@@ -30,11 +30,15 @@ function findKthSmallestElement(nums, k, left = 0, right = nums.length - 1) {
 }
 
 /** Helper function responsible for arranging elements in an array 
- *  on either side of the pivot 
+ *  on either side of the pivot
+ *  
+ *  Note: ideally pivot should be chosen so that it's roughly median
+ *  value in the data set being sorted
+ * 
  *  Returns the pivot index 
  */
 function findPivotIndex(arr, start, end) {
-  let pivot = arr[end];
+  let pivot = arr[end];  // For simplicity, set pivot to last element
   let i = start;
   for (let j = start; j < end; j++) {
     if (arr[j] <= pivot) {
