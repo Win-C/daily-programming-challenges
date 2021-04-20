@@ -34,18 +34,18 @@ class Tree {
 function findLargestTreeSumPath(root){
   let maxSum = 0;
 
-  function calcBranchSum(node, branchSum = 0){
+  function getTreeSumPath(node, branchSum = 0){
     if (!node) return 0;
 
-    let left = calcBranchSum(node.left, branchSum);
-    let right = calcBranchSum(node.right, branchSum);
+    let left = getTreeSumPath(node.left, branchSum);
+    let right = getTreeSumPath(node.right, branchSum);
 
     maxSum = Math.max(maxSum, node.val + left + right);
 
     return Math.max(node.val + left, node.val + right);
   }
 
-  calcBranchSum(root);
+  getTreeSumPath(root);
 
   return maxSum;
 }
