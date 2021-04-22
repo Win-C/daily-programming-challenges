@@ -9,6 +9,16 @@
 //    [3, 0, 2, 0, 4] => 7
 //    [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1] => 6
 
+/** Function calculates the amount of rainwater trapped
+ *  Uses two variables to store left and right max of each
+ *  element up until that point
+ * 
+ *  @param {*} nums is an array of non-negative integers
+ *  @returns total rainwater trapped as an integer
+ * 
+ *  Time Complexity: O(N) where N is the length of nums
+ *  Space Complexity: O(1)
+ */
 function calcTrappedRainWater(nums) {
   let totalRainwater = 0;
   let n = nums.length;
