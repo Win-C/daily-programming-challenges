@@ -22,6 +22,13 @@
 //      ii) if no, move downward to next cell
 // Repeat steps
 
+/** Function checks if a target value exists in a MxN matrix
+ *  Takes in an array of arrays and a target integer
+ *  Returns true if the target is found and false otherwise
+ *  
+ *  Time complexity: O(N + M)
+ *  Space complexity: O(1)
+ */
 function matrixSearch(matrix, target) {
   let row = 0;
   let col = matrix[0].length - 1;
