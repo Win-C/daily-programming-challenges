@@ -21,6 +21,16 @@
 //    2) Dynamic programming - use an array to store max level of profits
 //       at each threshold
 
+/** Function finds the most profitable jobs for each person
+ * 
+ * @param {*} people array where each index is a person's strength
+ * @param {*} jobs array with required strength for each job j
+ * @param {*} profits array of profit generated for each job j
+ * @returns max profit from matching jobs with people
+ * 
+ * Time complexity: O(N) which is the length of the array
+ * Space complexity: O(N) for creating the DP maxProfit array
+ */
 function findMostProfits(people, jobs, profits){
   // Get length needed for dynamic programming array
   let length = 0;
